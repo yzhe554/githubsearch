@@ -26,7 +26,14 @@ export class GithubService {
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
+  }
 
+  getRepos(): Promise <any> {
+    console.log('service is working');
+    return this.http.get('http://api.github.com/users/' + this.userName + '/repos' + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise < any > {
