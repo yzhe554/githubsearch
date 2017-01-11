@@ -14,11 +14,14 @@ import {
 })
 export class ProfileComponent implements OnInit {
 
-  user: any[];
+  user: any;
   repos: any[];
+  username: string;
 
   constructor(
-    private githubService: GithubService) {}
+    private githubService: GithubService) {
+      this.user = false;
+    }
 
   getUser(): void {
     this.githubService.getUser().then(user => {
@@ -30,6 +33,12 @@ export class ProfileComponent implements OnInit {
     this.githubService.getRepos().then(repos => {
       this.repos = repos;
     });
+  }
+
+  searchUser() {
+    this.githubService.updateUser(this.username);
+    this.getUser();
+    this.getRepos();
   }
 
   ngOnInit() {
