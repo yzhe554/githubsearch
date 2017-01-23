@@ -36,7 +36,12 @@ export class ProfileComponent implements OnInit {
   }
 
   searchUser() {
-    this.githubService.updateUser(this.username);
+    if(this.username != '') {
+      this.githubService.updateUser(this.username);
+    }
+    else {
+      this.githubService.updateUser('yzhe554');
+    }
     this.getUser();
     this.getRepos();
   }
