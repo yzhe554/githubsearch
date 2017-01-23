@@ -3,7 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 ## Preparation 
-Install [NPM](https://github.com/npm/npm)__
+Install [NPM](https://github.com/npm/npm)  
 Run `npm install` to set up node_modules.
 
 ## Development server
